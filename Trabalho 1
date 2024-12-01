@@ -1,0 +1,109 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNbLdqheZJVsWlrTDT2vShl",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/py241012507/CEE2/blob/main/Trabalho%201\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "298nnbvXvPF8"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "##Trabalho 1: Análise de Notas com Dicionários e Condicionais\n",
+        "\n",
+        "Escreva um programa que receba as notas de uma turma e analise os dados para:\n",
+        "\n",
+        "Calcular a média das notas.\n",
+        "Identificar a maior e a menor nota.\n",
+        "Contar quantos alunos estão acima da média e quantos estão abaixo.\n",
+        "Retornar o nome dos alunos com a nota mais alta e a mais baixa.\n",
+        "Use um dicionário para armazenar os dados dos alunos, onde a chave é o nome do aluno e o valor é a nota.\n",
+        "\n",
+        "\n",
+        "\n",
+        "Exemplo de entrada e saída:\n",
+        "\n",
+        "notas = {\"Ana\": 7.5, \"João\": 8.0, \"Maria\": 6.5, \"Pedro\": 9.0, \"Lucas\": 5.0}\n",
+        "# Saída esperada:\n",
+        "# Média das notas: 7.2\n",
+        "# Maior nota: Pedro com 9.0\n",
+        "# Menor nota: Lucas com 5.0\n",
+        "# Alunos acima da média: 3\n",
+        "# Alunos abaixo da média: 2"
+      ],
+      "metadata": {
+        "id": "uD-GYPG7zeyl"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def analise_das_notas(notas):\n",
+        "    media = sum(notas.values()) / len(notas)\n",
+        "    maior = max(notas, key=notas.get)\n",
+        "    menor = min(notas, key=notas.get)\n",
+        "    acima_media = sum(1 for nota in notas.values() if nota > media)\n",
+        "    abaixo_media = sum(1 for nota in notas.values() if nota < media)\n",
+        "\n",
+        "    print(f\"Média das notas: {media:.1f}\")\n",
+        "    print(f\"Maior nota: {maior}, com {notas[maior]:.1f}\")\n",
+        "    print(f\"Menor nota: {menor}, com {notas[menor]:.1f}\")\n",
+        "    print(f\"Aluno(s) acima da média: {acima_media}\")\n",
+        "    print(f\"Aluno(s) abaixo da média: {abaixo_media}\")\n",
+        "\n",
+        "notas = {\"Ana\": 7.5, \"João\": 8.0, \"Maria\": 6.5, \"Pedro\": 9.0, \"Lucas\": 5.0}\n",
+        "analise_das_notas(notas)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ooLRaitQzvkp",
+        "outputId": "71c1a7fa-d5c1-4167-9fee-e1d3413d1562"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Média das notas: 7.2\n",
+            "Maior nota: Pedro, com 9.0\n",
+            "Menor nota: Lucas, com 5.0\n",
+            "Aluno(s) acima da média: 3\n",
+            "Aluno(s) abaixo da média: 2\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
